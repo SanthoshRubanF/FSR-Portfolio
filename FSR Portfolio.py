@@ -22,7 +22,7 @@ else:
 
 # ---- HEADER ----
 st.title("Santhosh Ruban F")
-st.subheader("Data Scientist | AI/ML | Computer Vision | MLOps")
+st.subheader("Data Scientist")
 
 # ---- SIDEBAR NAVIGATION ----
 menu = ["Home", "About Me", "Projects", "Contact"]
