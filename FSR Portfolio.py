@@ -7,7 +7,7 @@ st.set_page_config(page_title="Santhosh Ruban F | Portfolio", layout="wide")
 
 # ---- LIGHT/DARK MODE ----
 theme = st.sidebar.radio("Choose Theme", ["Light", "Dark"])
-if theme == "Dark":
+if theme == "Light":
     st.markdown("""
         <style>
         body { background-color: #0e1117; color: white; }
@@ -109,6 +109,27 @@ elif choice == "Projects":
     - **Tech Stack:** Python, Streamlit, EasyOCR, SQLite
     - OCR app to extract, edit, and store business card data
     - [GitHub Repo](https://github.com/SanthoshRubanF/BizCardX-Extracting-Business-Card-Data-with-OCR)
+    """)
+
+    st.success("5. 📊 Tender Recommender: Government Tender Tracker & Matcher")
+    st.write("""
+    - **Tech Stack:** Python, Streamlit, BeautifulSoup, Scikit-learn, SQLite  
+    - Scrapes tenders from GeM, recommends based on TF-IDF matching  
+    - [GitHub Repo](https://github.com/SanthoshRubanF/Government-Tender-Tracker-Bid-Match-Recommender)
+    """)
+
+    st.info("6. 👩‍💼 Employee Data Management System")
+    st.write("""
+    - **Tech Stack:** Python, Streamlit, Pandas, SQLite  
+    - A web app to manage employee records with add, update, view, and delete features  
+    - [GitHub Repo](https://github.com/SanthoshRubanF/Employee-Data-Management)
+    """)
+
+    st.info("7. 📝 Complaint Management System")
+    st.write("""
+    - **Tech Stack:** Python, Streamlit, Pandas, SQLite  
+    - A streamlined platform to register, track, and resolve user complaints efficiently  
+    - [GitHub Repo](https://github.com/SanthoshRubanF/Complaint-Management-System)
     """)
 
 # ---- CONTACT ----
