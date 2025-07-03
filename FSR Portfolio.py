@@ -11,10 +11,7 @@ st.subheader("Data Scientist")
 
 # ---- SIDEBAR NAVIGATION ----
 menu = ["Home", "About Me", "Projects", "Contact"]
-choice = st.radio(
-        "Navigation",
-        ["🏠 Home", "👤 About Me", "💼 Projects", "📬 Contact"],
-        label_visibility="collapsed")
+choice = st.sidebar.selectbox("Navigation", menu)
 
 # ---- DOWNLOAD RESUME ----
 def download_resume():
