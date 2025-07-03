@@ -10,8 +10,10 @@ st.title("Santhosh Ruban F")
 st.subheader("Data Scientist")
 
 # ---- SIDEBAR NAVIGATION ----
-menu = ["Home", "About Me", "Projects", "Contact"]
-choice = st.sidebar.selectbox("Navigation", menu)
+choice = st.radio(
+        "Navigation",
+        ["🏠 Home", "👤 About Me", "💼 Projects", "📬 Contact"],
+        label_visibility="collapsed")
 
 # ---- DOWNLOAD RESUME ----
 def download_resume():
