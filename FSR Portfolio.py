@@ -6,19 +6,34 @@ import base64
 st.set_page_config(page_title="Santhosh Ruban F | Portfolio", layout="wide")
 
 # ---- LIGHT/DARK MODE ----
-theme = st.sidebar.radio("Choose Theme", ["Light", "Dark"])
-if theme == "Light":
-    st.markdown("""
+import streamlit as st
+
+# Sidebar theme selection
+theme = st.sidebar.radio("🎨 Choose Theme", ["Light", "Dark"])
+if theme == "Dark":
+    st.markdown(
+        """
         <style>
-        body { background-color: #0e1117; color: white; }
+        .main {
+            background-color: #0e1117;
+            color: white;
+        }
         </style>
-    """, unsafe_allow_html=True)
+        """,
+        unsafe_allow_html=True
+    )
 else:
-    st.markdown("""
+    st.markdown(
+        """
         <style>
-        body { background-color: white; color: black; }
+        .main {
+            background-color: #ffffff;
+            color: black;
+        }
         </style>
-    """, unsafe_allow_html=True)
+        """,
+        unsafe_allow_html=True
+    )
 
 # ---- HEADER ----
 st.title("Santhosh Ruban F")
@@ -125,7 +140,7 @@ elif choice == "Projects":
     - [GitHub Repo](https://github.com/SanthoshRubanF/Employee-Data-Management)
     """)
 
-    st.info("7. 📝 Complaint Management System")
+    st.success("7. 📝 Complaint Management System")
     st.write("""
     - **Tech Stack:** Python, Streamlit, Pandas, SQLite  
     - A streamlined platform to register, track, and resolve user complaints efficiently  
