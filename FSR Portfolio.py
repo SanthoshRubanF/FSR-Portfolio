@@ -118,6 +118,6 @@ elif choice == "Contact":
     📧 Email: santhoshruban@gmail.com
     🔗 [LinkedIn](http://www.linkedin.com/in/santhoshrubanf)
     💻 [GitHub](https://github.com/SanthoshRubanF)
-    📍 Chennai, Tamil Nadu, India - 600089
+    📍 Chennai, Tamil Nadu, India - 600058
     ☎️ +91 90955 55109
     """)
