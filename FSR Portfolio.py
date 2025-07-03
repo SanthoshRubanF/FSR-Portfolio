@@ -6,34 +6,35 @@ import base64
 st.set_page_config(page_title="Santhosh Ruban F | Portfolio", layout="wide")
 
 # ---- LIGHT/DARK MODE ----
-import streamlit as st
+if "theme" not in st.session_state:
+    st.session_state.theme = "Light"
 
-# Sidebar theme selection
-theme = st.sidebar.radio("🎨 Choose Theme", ["Light", "Dark"])
+if st.sidebar.button("🌗 Toggle Theme"):
+    st.session_state.theme = "Dark" if st.session_state.theme == "Light" else "Light"
+
+theme = st.session_state.theme
+
 if theme == "Dark":
-    st.markdown(
-        """
-        <style>
-        .main {
-            background-color: #0e1117;
-            color: white;
-        }
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
+    st.markdown("""
+    <style>
+    .main {
+        background-color: #0e1117;
+        color: white;
+    }
+    </style>
+    """, unsafe_allow_html=True)
 else:
-    st.markdown(
-        """
-        <style>
-        .main {
-            background-color: #ffffff;
-            color: black;
-        }
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
+    st.markdown("""
+    <style>
+    .main {
+        background-color: #ffffff;
+        color: black;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
+st.title(f"Theme: {theme}")
+st.write("Click the sidebar button to toggle theme.")
 
 # ---- HEADER ----
 st.title("Santhosh Ruban F")
