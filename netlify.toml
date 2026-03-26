@@ -1,4 +1,4 @@
-[build]
+[build] # Triggering deploy
   publish = "."
 
 [[redirects]]
