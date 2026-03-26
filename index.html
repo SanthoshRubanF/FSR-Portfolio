@@ -30,7 +30,7 @@
       --border: rgba(240, 244, 255, 0.08);
       --heading-font: 'Space Grotesk', sans-serif;
       --body-font: 'DM Sans', sans-serif;
-      --nav-height: 72px;
+      --nav-height: 90px;
       --max-width: 1200px;
       --transition: 0.3s ease;
     }
@@ -108,27 +108,31 @@
     .navbar .container {
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: flex-end; /* Push links to the right */
       height: 100%;
+      max-width: 100%; /* Go edge-to-edge for full positioning */
+      padding: 0 40px;
     }
     .nav-logo {
+      position: fixed;
+      left: 0;
+      top: 0;
       display: inline-flex;
       align-items: center;
       text-decoration: none;
-      margin-right: 30px;
+      padding: 5px 15px;
+      z-index: 1100;
     }
     .nav-logo-img {
-      height: 48px;
+      height: 140px;
       width: auto;
       object-fit: contain;
-      border-radius: 10px;
       mix-blend-mode: screen;
-      filter: contrast(1.1) saturate(1.1);
-      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.4s ease;
+      filter: brightness(1.1); /* Clean and clear, no glow */
+      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
     .nav-logo:hover .nav-logo-img {
-      transform: scale(1.15) translateY(-2px);
-      filter: contrast(1.2) saturate(1.2) drop-shadow(0 0 15px rgba(0, 212, 255, 0.6));
+      transform: scale(1.1) translateY(-2px);
     }
     .nav-links {
       display: flex;
@@ -136,10 +140,10 @@
       gap: 32px;
     }
     .nav-links a {
-      font-size: 0.92rem;
-      font-weight: 500;
-      color: var(--white-dim);
-      transition: color var(--transition);
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #ffffff;
+      transition: color var(--transition), transform var(--transition);
       position: relative;
     }
     .nav-links a::after {
@@ -851,7 +855,7 @@
   <nav class="navbar" id="navbar">
     <div class="container">
       <a href="#home" class="nav-logo">
-        <img src="fsr-logo.png" alt="FSR Logo" class="nav-logo-img" />
+        <img src="fsr-logo-v2.png" alt="FSR Logo" class="nav-logo-img" />
       </a>
       <div class="nav-links" id="navLinks">
         <a href="#home" onclick="closeMenu()">Home</a>
