@@ -1638,13 +1638,28 @@
     function handleFormSubmit(e) {
       e.preventDefault();
       const btn = e.target.querySelector('.form-submit');
-      btn.textContent = 'Message Sent ✓';
-      btn.style.background = '#10b981';
-      setTimeout(() => {
-        btn.textContent = 'Send Message ✉';
-        btn.style.background = '';
-        e.target.reset();
-      }, 3000);
+      const formData = new FormData(e.target);
+      
+      fetch('https://formspree.io/f/xzdkzpqp', {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          btn.textContent = 'Message Sent ✓';
+          btn.style.background = '#10b981';
+          setTimeout(() => {
+            btn.textContent = 'Send Message ✉';
+            btn.style.background = '';
+            e.target.reset();
+          }, 3000);
+        }
+      }).catch(error => {
+        btn.textContent = 'Error sending message';
+        btn.style.background = '#ef4444';
+      });
     }
 
     /* ------- Active nav link highlight ------- */
